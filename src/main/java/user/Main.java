@@ -52,6 +52,8 @@ public class Main {
 
             dao.list().stream().forEach(System.out::println);
 
+            System.out.println("\nSimion Tamás");
+
         }
     }
 }
