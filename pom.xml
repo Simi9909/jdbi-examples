@@ -21,8 +21,8 @@
         <developerConnection>scm:git:https://github.com/jeszy75/jdbi-examples.git</developerConnection>
     </scm>
     <properties>
-        <maven.compiler.source>13</maven.compiler.source>
-        <maven.compiler.target>13</maven.compiler.target>
+        <maven.compiler.source>14</maven.compiler.source>
+        <maven.compiler.target>14</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdbi.version>3.12.2</jdbi.version>
         <exec.cleanupDaemonThreads>false</exec.cleanupDaemonThreads>
@@ -64,6 +64,12 @@
             <version>2.1.1</version>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -81,6 +87,19 @@
                 <groupId>com.github.johnpoth</groupId>
                 <artifactId>jshell-maven-plugin</artifactId>
                 <version>1.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-maven-plugin</artifactId>
+                <version>1.18.10.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>delombok</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
